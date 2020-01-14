@@ -13,4 +13,5 @@ module.exports = {
       new TerserPlugin(),
     ],
   },
+  target: 'node',
 };
