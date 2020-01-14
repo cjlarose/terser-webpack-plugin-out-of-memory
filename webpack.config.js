@@ -10,7 +10,7 @@ module.exports = {
   },
   optimization: {
     minimizer: [
-      new TerserPlugin(),
+      new TerserPlugin({ parallel: 8 }),
     ],
   },
   target: 'node',
