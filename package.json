@@ -1,0 +1,16 @@
+{
+  "name": "big-webpack-config",
+  "version": "1.0.0",
+  "description": "Just a project with a big webpack config",
+  "main": "dist/bundle.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "author": "Chris LaRose (http://cjlarose.com/)",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  }
+}
