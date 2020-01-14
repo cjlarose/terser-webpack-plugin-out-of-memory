@@ -2,7 +2,9 @@ const path = require('path');
 
 const TerserPlugin = require('terser-webpack-plugin');
 
-const numEntries = 500;
+const numEntries = 'NUM_ENTRIES' in process.env ? parseInt(process.env.NUM_ENTRIES, 10) : 500;
+const workers = 'TERSER_WORKERS' in process.env ? parseInt(process.env.TERSER_WORKERS, 10) : 8;
+const useCache = process.env.TERSER_CACHE !== undefined;
 
 module.exports = {
   entry: () => {
@@ -19,7 +21,7 @@ module.exports = {
   },
   optimization: {
     minimizer: [
-      new TerserPlugin({ parallel: 8, cache: false }),
+      new TerserPlugin({ parallel: workers, cache: useCache }),
     ],
   },
   target: 'node',
